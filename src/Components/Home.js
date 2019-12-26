@@ -33,7 +33,7 @@ class Home extends Component {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Learn More</Button>
+        <Button className={classes.btn} variant="contained"size="Large" color="secondary" >Learn More</Button>
         </CardActions>
       </Card>
       
@@ -56,7 +56,7 @@ class Home extends Component {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Learn More</Button>
+        <Button className={classes.btn} variant="contained"size="Large" color="secondary" >Learn More</Button>
         </CardActions>
       </Card>
       <Card className={classes.card}>
@@ -77,7 +77,7 @@ class Home extends Component {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Learn More</Button>
+        <Button className={classes.btn} variant="contained"size="Large" color="secondary" >Learn More</Button>
         </CardActions>
       </Card>
 
@@ -99,29 +99,29 @@ class Home extends Component {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Learn More</Button>
+          <Button className={classes.btn} variant="contained"size="Large" color="secondary" >Learn More</Button>
         </CardActions>
       </Card>
+
       </div>
     );
   }
 }
 export default withStyles({
     card: {
-        Width: 150,
-        height: 250,
+        Width: "auto",
+        height: 280,
         display: "inline-block",
-        margin: "100px 0px 0px 150px"
-      },
-      bullet: {
-        display: "inline-block",
-        margin: "0 2px",
-        transform: "scale(0.8)"
+        margin: "100px auto 0px 75px"
       },
       title: {
-        fontSize: 30
+        fontSize: 30,
+        color : "#785"
       },
       pos: {
         marginBottom: 12
+      },
+      btn : {
+        margin : "5px 20px 5px 40px"
       }
 }) (Home);

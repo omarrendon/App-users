@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import UserForm from "./UserForm";
 import Users from "./Users";
-import App from "../App";
 import Tabs from "@material-ui/core/Tabs";
 import AppBar from "@material-ui/core/AppBar";
 import '../Styles/Nav.css'
+import Home from "./Home";
 
 class Nav extends Component {
   
@@ -20,9 +20,9 @@ class Nav extends Component {
           </Tabs>
         </AppBar>
         <Switch>
-          <Route exact path="/Home" component={App} />
-          <Route path="/Registro" component={UserForm} />
-          <Route path="/Usuarios" component={Users} />
+          <Route exact path="/" component={Home} />
+          <Route  path="/Registro" component={UserForm} />
+          <Route   path="/Usuarios" component={Users} />
         </Switch>
       </Router>
     );
