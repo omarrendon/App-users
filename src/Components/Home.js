@@ -18,18 +18,16 @@ class Home extends Component {
         <Card className={classes.card}>
         <CardContent>
           <Typography className={classes.title} color="textSecondary" gutterBottom>
-            Word of the Day
+            Agregar Usuario
           </Typography>
-          <Typography variant="h5" component="h2">
-            be nev o lent
+          {/* <Typography variant="h5" component="h2">
+            Registra un nuevo usuario
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
             adjective
-          </Typography>
-          <Typography variant="body2" component="p">
-            well meaning and kindly.
-            <br />
-            {'"a benevolent smile"'}
+          </Typography> */}
+          <Typography variant="body2" component="p" className={classes.texto}>
+            Puedes registrar a un nuevo usuario
           </Typography>
         </CardContent>
         <CardActions>
@@ -41,39 +39,16 @@ class Home extends Component {
       <Card className={classes.card}>
         <CardContent>
           <Typography className={classes.title} color="textSecondary" gutterBottom>
-            Word of the Day
+            Lista de Usuarios
           </Typography>
-          <Typography variant="h5" component="h2">
+          {/* <Typography variant="h5" component="h2">
             be nev o lent
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
             adjective
-          </Typography>
-          <Typography variant="body2" component="p">
-            well meaning and kindly.
-            <br />
-            {'"a benevolent smile"'}
-          </Typography>
-        </CardContent>
-        <CardActions>
-        <Button className={classes.btn} variant="contained"size="Large" color="secondary" >Learn More</Button>
-        </CardActions>
-      </Card>
-      <Card className={classes.card}>
-        <CardContent>
-          <Typography className={classes.title} color="textSecondary" gutterBottom>
-            Word of the Day
-          </Typography>
-          <Typography variant="h5" component="h2">
-            be nev o lent
-          </Typography>
-          <Typography className={classes.pos} color="textSecondary">
-            adjective
-          </Typography>
-          <Typography variant="body2" component="p">
-            well meaning and kindly.
-            <br />
-            {'"a benevolent smile"'}
+          </Typography> */}
+          <Typography variant="body2" component="p" className={classes.texto}>
+           Consulta la lista de los usuarios registrados
           </Typography>
         </CardContent>
         <CardActions>
@@ -84,24 +59,24 @@ class Home extends Component {
       <Card className={classes.card}>
         <CardContent>
           <Typography className={classes.title} color="textSecondary" gutterBottom>
-            Word of the Day
+            Eliminar Usuarios
           </Typography>
-          <Typography variant="h5" component="h2">
-            be nev o lent
+          {/* <Typography variant="h5" component="h2">
+            Corrige y elimina a los usuarios previamente agregados
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
             adjective
-          </Typography>
-          <Typography variant="body2" component="p">
-            well meaning and kindly.
-            <br />
-            {'"a benevolent smile"'}
+          </Typography> */}
+          <Typography variant="body2" component="p" className={classes.texto}> 
+            Elimina a los usuarios previamente agregados
           </Typography>
         </CardContent>
         <CardActions>
-          <Button className={classes.btn} variant="contained"size="Large" color="secondary" >Learn More</Button>
+        <Button className={classes.btn} variant="contained"size="Large" color="secondary" >Learn More</Button>
         </CardActions>
       </Card>
+
+    
 
       </div>
     );
@@ -110,18 +85,23 @@ class Home extends Component {
 export default withStyles({
     card: {
         Width: "auto",
-        height: 280,
+        height: "auto",
         display: "inline-block",
-        margin: "100px auto 0px 75px"
+        margin: "100px 0px 0px 60px",
       },
       title: {
-        fontSize: 30,
-        color : "#785"
+        fontSize: 35,
+        color : "#283747",
+        textAlign: "center"
+      },
+      texto : {
+        color : "#2874A6",
+        fontSize: 18,
       },
       pos: {
         marginBottom: 12
       },
       btn : {
-        margin : "5px 20px 5px 40px"
+        margin : "5px 0px 5px 90px"
       }
 }) (Home);

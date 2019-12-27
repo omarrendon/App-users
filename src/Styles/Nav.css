@@ -1,8 +1,12 @@
 .Links{
-    font-weight: 40;
+    font-weight: 100px;
     font-size: 20px;
     text-decoration: none;
     padding: 20px;
     margin: 0px 160px 0px ;
     color: #fff;
+}
+.Links:hover{
+    color: #E74C3C;
+    font-size: 25px;
 }

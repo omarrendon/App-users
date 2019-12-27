@@ -35,6 +35,9 @@ class UserForm extends Component {
     const {name, lastName, email, job} = this.state
     return (
       <div>
+        <h1 className={classes.titulo}>
+          Registra a un nuevo usuario
+        </h1>
         <form className={classes.Espacios} >
           <Paper square={false} elevation={5} className={classes.Paper}>
             <div className={classes.Espacios}>
@@ -100,7 +103,7 @@ class UserForm extends Component {
 }
 export default withStyles({
   Paper: {
-    margin: "100px 400px 180px 550px",
+    margin: "10px 400px 180px 550px",
     padding: "20px 30px 20px 50px",
     width: "200px"
   },
@@ -111,5 +114,11 @@ export default withStyles({
   Espacios: {
     paddingTop: "10px",
     paddingBottom: "10px"
+  },
+  titulo: {
+    fontFamily: "Roboto Condensed",
+    color: "#154360",
+    textAlign: "center",
+    fontSize: "40px"
   }
 })(UserForm);
