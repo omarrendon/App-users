@@ -9,18 +9,21 @@ class Home extends Component {
           title="Agregar Usuario"
           description=" Puedes registrar a un nuevo usuario"
           nameBtn="Registrar"
+          link = '/Registro'
         />
 
         <TemplateCard
-          title="Agregar Usuario"
-          description=" Puedes registrar a un nuevo usuario"
-          nameBtn="Registrar"
+          title="Ver Usuarios"
+          description="Puedes observar el listado de usuarios"
+          nameBtn="Usuarios"
+          link = '/Usuarios'
         />
 
         <TemplateCard
-          title="Agregar Usuario"
-          description=" Puedes registrar a un nuevo usuario"
-          nameBtn="Registrar"
+          title="Editar Usuarios"
+          description=" Puedes Editar y Eliminar usuarios"
+          nameBtn="Editar"
+          link = '/Registro'
         />
       </div>
     );

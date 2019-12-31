@@ -5,11 +5,13 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core";
+import { Link } from 'react-router-dom';
+
 
 class TemplateCard extends Component {
   render() {
-    const {classes} = this.props
-    const {title, description, nameBtn} = this.props
+    const { classes } = this.props;
+    const { title, description, nameBtn, link } = this.props;
     return (
       <div>
         <Card className={classes.card}>
@@ -31,6 +33,8 @@ class TemplateCard extends Component {
               variant="contained"
               size="Large"
               color="secondary"
+              component ={Link}
+              to = {link}
             >
               {nameBtn}
             </Button>
@@ -41,25 +45,25 @@ class TemplateCard extends Component {
   }
 }
 export default withStyles({
-    card: {
-        Width: "auto",
-        height: "auto",
-        display: "inline-block",
-        margin: "100px 0px 0px 60px",
-      },
-      title: {
-        fontSize: 35,
-        color : "#283747",
-        textAlign: "center"
-      },
-      texto : {
-        color : "#2874A6",
-        fontSize: 18,
-      },
-      pos: {
-        marginBottom: 12
-      },
-      btn : {
-        margin : "5px 0px 5px 90px"
-      }
-}) (TemplateCard);
+  card: {
+    Width: "auto",
+    height: "auto",
+    display: "inline-block",
+    margin: "100px 0px 0px 60px"
+  },
+  title: {
+    fontSize: 35,
+    color: "#283747",
+    textAlign: "center"
+  },
+  texto: {
+    color: "#2874A6",
+    fontSize: 18
+  },
+  pos: {
+    marginBottom: 12
+  },
+  btn: {
+    margin: "5px 0px 5px 90px"
+  }
+})(TemplateCard);
