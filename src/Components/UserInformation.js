@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import UserForm from "./UserForm";
 
-import ListUsers from "./ListUsers";
 
 class UserInformation extends Component {
   state = {
@@ -41,7 +40,7 @@ class UserInformation extends Component {
                 user={this.state.user}
                 onClick={this.handleSubmit}
             />
-            <ListUsers tarjetas={this.state.user} />
+           
         </div>
     );
   }

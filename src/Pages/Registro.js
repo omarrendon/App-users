@@ -1,12 +1,12 @@
 import React, { Component } from "react";
+import UserForm from "../Components/UserForm";
 
 class Registro extends Component {
   render() {
     return (
       <div>
-        <h1>
-            Registra a un nuevo usuario
-        </h1>
+        
+        <UserForm/>
       </div>
     );
   }
