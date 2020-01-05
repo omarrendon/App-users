@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import UserForm from "./UserForm";
-import TemplateCard from "./TemplateCard";
-import CardUser from "./CardUser";
+
 import ListUsers from "./ListUsers";
 
 class UserInformation extends Component {
