@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import UserForm from "./UserForm";
-import Users from "./Users";
+import Users from "../Pages/Users";
 import Tabs from "@material-ui/core/Tabs";
 import AppBar from "@material-ui/core/AppBar";
 import '../Styles/Nav.css'
-import Home from "./Home";
+import Home from "../Pages/Home";
+import Registro from "../Pages/Registro";
 
 class Nav extends Component {
   
@@ -21,7 +21,7 @@ class Nav extends Component {
         </AppBar>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route  path="/Registro" component={UserForm} />
+          <Route  path="/Registro" component={Registro} />
           <Route   path="/Usuarios" component={Users} />
         </Switch>
       </Router>

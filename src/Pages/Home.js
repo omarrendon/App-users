@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import TemplateCard from "./TemplateCard";
+import TemplateCard from "../Components/TemplateCard";
+import '../Styles/Home.css'
 
 class Home extends Component {
   render() {
     return (
-      <div>
+      <div className='contenedor'>
         <TemplateCard
           title="Agregar Usuario"
           description=" Puedes registrar a un nuevo usuario"
