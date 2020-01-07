@@ -71,6 +71,7 @@ class UserForm extends Component {
                 label="Corro Eléctronico"
                 type="email"
                 onChange={this.handleChange}
+                
               />
             </div>
 
