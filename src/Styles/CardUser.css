@@ -1,0 +1,8 @@
+.contenedor{
+    width: auto;
+    height: auto;
+    display: inline-block;
+}
+.card:hover{
+    background-color: #FEF6FF;
+}
