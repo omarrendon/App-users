@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CardUser from "../Components/CardUser";
 
 class Users extends Component {
     render() {
@@ -7,6 +8,11 @@ class Users extends Component {
                 <h1>
                     USUARIOSklklk
                 </h1>
+                <div>
+                    <CardUser
+                      
+                    />
+                </div>
             </div>
         )
     }

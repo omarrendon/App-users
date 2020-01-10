@@ -2,16 +2,13 @@ import React, { Component } from "react";
 import { FormControl, InputLabel, Input, FormHelperText, Button} from "@material-ui/core";
 
 class Form extends Component {
-  handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(this.state)
-  }
+  
   render() {
-    const {onChange, user} = this.props
-    console.log(this.state)
+    const {onChange, user, onSubmit} = this.props
+  
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={onSubmit}>
           <FormControl>
             <InputLabel htmlFor="my-input">Nombre(s)</InputLabel>
             <Input 
