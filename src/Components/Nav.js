@@ -5,7 +5,7 @@ import Tabs from "@material-ui/core/Tabs";
 import AppBar from "@material-ui/core/AppBar";
 import '../Styles/Nav.css'
 import Home from "../Pages/Home";
-import Registro from "../Pages/Registro";
+import Registro2 from "../Pages/Registro2";
 
 class Nav extends Component {
   
@@ -21,7 +21,7 @@ class Nav extends Component {
         </AppBar>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route  path="/Registro" component={Registro} />
+          <Route  path="/Registro" component={Registro2} />
           <Route   path="/Usuarios" component={Users} />
         </Switch>
       </Router>

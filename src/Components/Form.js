@@ -1,15 +1,53 @@
 import React, { Component } from "react";
-import { FormControl, InputLabel, Input, FormHelperText, Button} from "@material-ui/core";
+// import { FormControl, InputLabel, Input, FormHelperText, Button} from "@material-ui/core";
 
 class Form extends Component {
-  
   render() {
-    const {onChange, user, onSubmit} = this.props
-  
+    const { onChange, user, onSubmit } = this.props;
+
     return (
       <div>
         <form onSubmit={onSubmit}>
-          <FormControl>
+          <input
+            id="name"
+            name="name"
+            placeholder="name"
+            type="text"
+            value={user.name}
+            onChange={onChange}
+          >
+          </input>
+          <input
+            id="lastName"
+            placeholder="last name"
+            type="text"
+            name='lastName'
+            value ={user.lastName}
+            onChange={onChange}
+          >
+          </input>
+          <input
+            id="email" 
+            name='email'
+            value ={user.email}
+            placeholder="email"
+            type=" email" 
+            onChange={onChange}
+          >
+          </input>
+          <input
+            id="job" 
+            name='job'
+            placeholder="job"
+            type="text" 
+            value ={user.job}
+            onChange={onChange}
+          >
+          </input>
+          <button type="submit">Guardar</button>
+        </form>
+      </div>
+      /* <FormControl>
             <InputLabel htmlFor="my-input">Nombre(s)</InputLabel>
             <Input 
               id="name"
@@ -71,9 +109,7 @@ class Form extends Component {
           
           <Button variant="contained" color="secondary" type="submit">
             Guardar
-          </Button>
-        </form>
-      </div>
+          </Button> */
     );
   }
 }

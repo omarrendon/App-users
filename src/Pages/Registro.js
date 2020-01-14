@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Form from "../Components/Form";
 import CardUser from "../Components/CardUser";
+import ListUser from "../Components/ListUsers";
 
 class Registro extends Component {
   state = {
@@ -23,13 +24,28 @@ class Registro extends Component {
   };
 
   handleSubmit = e => {
-    const users = this.state.users
-    users.push(this.state.user)
-    this.setState({ 
-      users
-    });
-    
     e.preventDefault();
+    const newItem = this.state.user
+    if(newItem.name !==""){
+      const newItems = [...this.state.users, newItem]
+      this.setState({
+        list:newItems,
+        user: {
+          name: '',
+          lastName: '',
+          email: '',
+          job : ''
+        }
+      })
+    } else {
+      alert('Lenar los campos')
+    }
+    // const users = [...this.state.users];
+    // users.push(this.state.user);
+    // this.setState({
+    //   users,                                                                                                       
+    // });
+    // e.preventDefault();
     console.log(this.state.user);
   };
 
@@ -43,10 +59,22 @@ class Registro extends Component {
           onSubmit={this.handleSubmit}
         />
         <div>
-          {users.map(() => {
+          {
+            users.map( item => {
+              return (
+                <p>item.user.name</p>
+              )
+            })
+          }
+          {/* <ListUser
+            users={this.state.users}
+          /> */}
+        </div>
+        {/* <div>
+          {users.map(e => {
             return <CardUser {...this.state.user} />;
           })}
-        </div>
+        </div> */}
       </div>
     );
   }
