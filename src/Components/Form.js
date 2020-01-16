@@ -1,115 +1,93 @@
 import React, { Component } from "react";
 // import { FormControl, InputLabel, Input, FormHelperText, Button} from "@material-ui/core";
+import ListUsers from "../Components/ListUsers";
 
 class Form extends Component {
-  render() {
-    const { onChange, user, onSubmit } = this.props;
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      lastName: "",
+      email: "",
+      job: "",
+      items: [],
+      validation : false
+    };
+  }
 
+  onChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
+  onSubmit = event => {
+    event.preventDefault();
+    if (this.state.name === "" ||this.state.lastName === "" ||this.state.email === "" ||this.state.job === "") {
+      alert("Rellenar los campos faltantes correctamente")
+    } else {
+      this.setState({
+        name: "",
+        lastName: "",
+        email: "",
+        job: "",
+        items: [
+          ...this.state.items,
+          this.state.name,
+          this.state.lastName,
+          this.state.email,
+          this.state.job
+        ],
+        validation: true
+      });
+    }
+    console.log(this.state);
+  };
+
+  render() {
+    const { name, lastName, email, job } = this.state;
     return (
       <div>
-        <form onSubmit={onSubmit}>
+        <form className="App" onSubmit={this.onSubmit}>
           <input
-            id="name"
+            value={name}
             name="name"
-            placeholder="name"
-            type="text"
-            value={user.name}
-            onChange={onChange}
-          >
-          </input>
+            placeholder="Nombre"
+            onChange={this.onChange}
+          />
+
           <input
-            id="lastName"
-            placeholder="last name"
-            type="text"
-            name='lastName'
-            value ={user.lastName}
-            onChange={onChange}
-          >
-          </input>
+            value={lastName}
+            name="lastName"
+            placeholder="Apellidos"
+            onChange={this.onChange}
+          />
+
           <input
-            id="email" 
-            name='email'
-            value ={user.email}
+            value={email}
+            name="email"
             placeholder="email"
-            type=" email" 
-            onChange={onChange}
-          >
-          </input>
+            onChange={this.onChange}
+          />
+
           <input
-            id="job" 
-            name='job'
-            placeholder="job"
-            type="text" 
-            value ={user.job}
-            onChange={onChange}
-          >
-          </input>
-          <button type="submit">Guardar</button>
+            value={job}
+            name="job"
+            placeholder="Puesto de trabajo"
+            onChange={this.onChange}
+          />
+
+          <button type="submit">Submit</button>
         </form>
+
+        <div>
+          {
+            this.state.validation
+            ? <ListUsers items={this.state.items} />
+            : <small>Rellenar los campos</small>
+          }
+        </div>
       </div>
-      /* <FormControl>
-            <InputLabel htmlFor="my-input">Nombre(s)</InputLabel>
-            <Input 
-              id="name"
-              name ='name'
-              aria-describedby="name-helper" 
-              type="text"
-              value ={user.name}
-              onChange={onChange}
-            />
-            <FormHelperText id="name-helper">
-              Ingesa solo tus nombres
-            </FormHelperText>
-          </FormControl>
-
-          <FormControl>
-            <InputLabel htmlFor="my-input">Apellidos</InputLabel>
-            <Input
-              id="lastName"
-              aria-describedby="lastName-helper"
-              type="text"
-              name='lastName'
-              value ={user.lastName}
-              onChange={onChange}
-            />
-            <FormHelperText id="lastName-helper">
-              Ingesa tus Apellidos
-            </FormHelperText>
-          </FormControl>
-
-          <FormControl>
-            <InputLabel htmlFor="my-input">Email</InputLabel>
-            <Input 
-              id="email" 
-              name='email'
-              value ={user.email}
-              aria-describedby="email-helper" 
-              type=" email" 
-              onChange={onChange}
-            />
-            <FormHelperText id="email-helper">
-              Tu email asignado en el trabajo
-            </FormHelperText>
-          </FormControl>
-
-          <FormControl>
-            <InputLabel htmlFor="my-input">Puesto de trabajo</InputLabel>
-            <Input 
-              id="job" 
-              name='job'
-              aria-describedby="job-helper" 
-              type="text" 
-              value ={user.job}
-              onChange={onChange}
-            />
-            <FormHelperText id="job-helper">
-              Tu posición dentro de la empresa
-            </FormHelperText>
-          </FormControl>
-          
-          <Button variant="contained" color="secondary" type="submit">
-            Guardar
-          </Button> */
     );
   }
 }
