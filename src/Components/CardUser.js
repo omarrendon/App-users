@@ -6,10 +6,7 @@ class CardUser extends Component {
         const  {name, lastName, email, job} = this.props
         return(
             <div>
-               
-               
-               
-               
+
                name {name}
                lastName {lastName}
                email {email}
