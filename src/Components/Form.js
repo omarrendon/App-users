@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-// import { FormControl, InputLabel, Input, FormHelperText, Button} from "@material-ui/core";
-import ListUsers from "../Components/ListUsers";
+// import ListUsers from "../Components/ListUsers";
 import CardUser from "./CardUser";
+import ListUsers from "./ListUsers";
 
 class Form extends Component {
   constructor(props) {
@@ -22,10 +22,9 @@ class Form extends Component {
     this.setState({
       user: {
         ...this.state.user,
-        [event.target.name] : event.target.value,
+        [event.target.name]: event.target.value
       }
     });
-    console.log(this.state.user);
   };
 
   onSubmit = event => {
@@ -38,7 +37,6 @@ class Form extends Component {
     ) {
       alert("Rellenar los campos faltantes correctamente");
     } else {
-
       this.setState({
         user: {
           name: "",
@@ -48,20 +46,17 @@ class Form extends Component {
         },
         items: [
           ...this.state.items,
-          // this.state.user
-          this.state.user.name,
-          this.state.user.lastName,
-          this.state.user.email,
-          this.state.user.job
+          this.state.user
         ],
         validation: true
       });
     }
-    console.log(this.state);
+    console.log(this.state.user);
+    console.log(this.state.items);
   };
 
   render() {
-    // const { name, lastName, email, job } = this.state.user;
+    const {validation, items} = this.state
     return (
       <div>
         <form className="App" onSubmit={this.onSubmit}>
@@ -101,17 +96,15 @@ class Form extends Component {
         </form>
 
         <div>
-          {this.state.validation ? (
-            <ListUsers
-              items={this.state.items}
-              // name= {this.state.name}
-              // lastName= {this.state.lastName}
-              // email= {this.state.email}
-              // job= {this.state.job}
-            />
-          ) : (
-            <small>Rellenar los campos</small>
-          )}
+          {
+            validation 
+            ? (
+                <ListUsers items={this.state.items}/>
+            ) 
+            : (
+              <small>Rellenar los campos</small>
+            )
+          }
         </div>
       </div>
     );

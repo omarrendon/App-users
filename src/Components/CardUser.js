@@ -9,7 +9,7 @@ class CardUser extends Component {
         <p>Nombre {name}</p>
         <p>Apellido {lastName}</p>
         <p>email {email}</p>
-        <p>puesto{job}</p>
+        <p>puesto {job}</p>
       </div>
     );
   }

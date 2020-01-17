@@ -1,17 +1,19 @@
 import React from 'react'
+import CardUser from './CardUser'
 
-
-const ListUsers = (props) => {
+function ListUsers (props){
   return(
-    <ul>
-    {
-      props.items.map((item, index) => {
-        return(
-          <li key={index}>{item}</li>
-        )
-      })
-    }
-  </ul>
+    <div>
+      {
+        props.items.map((person) => {
+          return(
+            <CardUser
+              {...person}
+            />
+          )
+        })
+      }
+    </div>
   )
 }
 export default ListUsers;
