@@ -1,8 +1,19 @@
-.contenedor{
+.contenedor1{
+    margin: 50px 50px;
     width: auto;
     height: auto;
     display: inline-block;
+    background: crimson;
+    border-radius: 20px;
 }
-.card:hover{
-    background-color: #FEF6FF;
+.contenido{
+    padding: 15px;
+}
+.contenido label{
+    color: floralwhite;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.contenido p{
+    color: whitesmoke;
 }

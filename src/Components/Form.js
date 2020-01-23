@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-// import ListUsers from "../Components/ListUsers";
-import CardUser from "./CardUser";
 import ListUsers from "./ListUsers";
-
+import '../Styles/Form.css'
 class Form extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -28,12 +27,13 @@ class Form extends Component {
   };
 
   onSubmit = event => {
+    const {name, lastName, email, job} = this.state.user
     event.preventDefault();
     if (
-      this.state.user.name === "" ||
-      this.state.user.lastName === "" ||
-      this.state.user.email === "" ||
-      this.state.user.job === ""
+      name === "" ||
+      lastName === "" ||
+      email === "" ||
+      job === ""
     ) {
       alert("Rellenar los campos faltantes correctamente");
     } else {
@@ -58,7 +58,7 @@ class Form extends Component {
   render() {
     const {validation, items} = this.state
     return (
-      <div>
+      <div className='ficha'>
         <form className="App" onSubmit={this.onSubmit}>
           <input
             value={this.state.user.name}
@@ -95,11 +95,14 @@ class Form extends Component {
           <button type="submit">Submit</button>
         </form>
 
-        <div>
+        <div className='ficha'>
           {
             validation 
             ? (
-                <ListUsers items={this.state.items}/>
+                <div className='contenido'>
+                  <ListUsers items={items}/>
+                </div>
+                
             ) 
             : (
               <small>Rellenar los campos</small>

@@ -9,9 +9,7 @@ class Users extends Component {
                     USUARIOSklklk
                 </h1>
                 <div>
-                    <CardUser
-                      
-                    />
+                    <CardUser/>
                 </div>
             </div>
         )

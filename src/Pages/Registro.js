@@ -1,11 +1,12 @@
 import React from "react";
 import Form from "../Components/Form";
+import '../Styles/Registro.css'
 
 const Registro = props => {
   return (
-    <>
-      <Form />
-    </>
+    <div className='contenidoPantalla'>
+      <Form /> 
+    </div>
   );
 };
 
